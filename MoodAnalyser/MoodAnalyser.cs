@@ -8,9 +8,14 @@ namespace Mood_Analyser
 {
     public class MoodAnalyser
     {
-        public string AnalyseMood(string mood)
+        public string mood;
+        public MoodAnalyser(string mood)
         {
-            if (mood.Contains("sad"))
+            this.mood = mood;
+        }
+            public string AnalyseMood()
+        {
+            if (this.mood.Contains("sad"))
             {
                 Console.WriteLine("Input Contains Sad");
                 return "Sad";
