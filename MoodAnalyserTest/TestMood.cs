@@ -41,6 +41,13 @@ namespace MoodAnalyserTest
             {
                 Assert.AreEqual("Mood Shold not be Empty", e.Message);
             }
-        }       
+        }
+        [Test]
+        public void GivenMoodAnalyserClassName_ReturnMoodAnalyserObject()
+        {
+            object expected = new Mood_Analyser.MoodAnalyser(null);
+            object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyze("Mood_Analyser.MoodAnalyser", "Mood_Analyser.MoodAnalyser");
+            expected.Equals(actual);           
+        }
     }
 }
