@@ -47,7 +47,7 @@ namespace MoodAnalyserTest
         {
             object expected = new Mood_Analyser.MoodAnalyser(null);
             object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyze("Mood_Analyser.MoodAnalyser", "Mood_Analyser.MoodAnalyser");
-            expected.Equals(actual);           
+            expected.Equals(actual);
         }
         [Test]
         public void GivenMoodAnalyserInvalidClassName_ReturnNoSuchClassException()
@@ -62,6 +62,20 @@ namespace MoodAnalyserTest
             catch (Exception e)
             {
                 Assert.AreEqual("Class Not Found", e.Message);
+            }
+        }
+        [Test]
+        public void GivenInvalidConstructorName_ReturnNoSuchMethodException()
+        {
+            try
+            {
+                object expected = new Mood_Analyser.MoodAnalyser(null);
+                object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyze("Mood_Analyser.MoodAnalyser", "Mood_Analyser.Mood");
+                expected.Equals(actual);                
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Method Not Found", e.Message);
             }
         }
     }
