@@ -114,5 +114,6 @@ namespace MoodAnalyserTest
                 Assert.AreEqual("Constructor Not Found", e.Message);
             }
         }
+
     }
 }
