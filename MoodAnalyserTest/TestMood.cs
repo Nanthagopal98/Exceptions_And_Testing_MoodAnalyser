@@ -78,5 +78,12 @@ namespace MoodAnalyserTest
                 Assert.AreEqual("Method Not Found", e.Message);
             }
         }
+        [Test]
+        public void GivenPerameteConstructor_ReturnMoodAnalyserObject()
+        {
+            object expected = new Mood_Analyser.MoodAnalyser("I am in sad mood");
+            object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyzeWithParamaterConstructor("Mood_Analyser.MoodAnalyser", "MoodAnalyser", "I am in sad mood");
+            expected.Equals(actual);
+        }
     }
 }
