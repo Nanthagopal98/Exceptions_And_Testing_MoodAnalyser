@@ -49,5 +49,20 @@ namespace MoodAnalyserTest
             object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyze("Mood_Analyser.MoodAnalyser", "Mood_Analyser.MoodAnalyser");
             expected.Equals(actual);           
         }
+        [Test]
+        public void GivenMoodAnalyserInvalidClassName_ReturnNoSuchClassException()
+        {
+            try
+            {
+                object expected = new Mood_Analyser.MoodAnalyser(null);
+                object actual = Mood_Analyser.MoodAnalyserFactory.CreateMoodAnalyze("Mood_Analyser.Mood", "Mood_Analyser.MoodAnalyser");
+                expected.Equals(actual);
+                //string actualResult = checkMood.AnalyseMood();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Class Not Found", e.Message);
+            }
+        }
     }
 }
