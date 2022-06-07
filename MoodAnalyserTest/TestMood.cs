@@ -120,6 +120,20 @@ namespace MoodAnalyserTest
             string expected = "Happy";
             string findMood = Mood_Analyser.MoodAnalyserFactory.InvokeMoodAnalyser("happy", "AnalyseMood");
             Assert.AreEqual(expected, findMood);
-        }       
+        }
+        [Test]
+        public void GivenHappyinInvalidMood_ThrowException()
+        {
+            try
+            {
+                string expected = "Happy";
+                string findMood = Mood_Analyser.MoodAnalyserFactory.InvokeMoodAnalyser("happy", "Analyse");
+                Assert.AreEqual(expected, findMood);
+            }
+            catch(Exception e )
+            {
+                Assert.AreEqual("Method Not Found", e.Message);
+            }
+        }
     }
 }
