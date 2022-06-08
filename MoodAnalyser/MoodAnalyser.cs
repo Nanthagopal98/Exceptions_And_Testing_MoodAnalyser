@@ -39,13 +39,6 @@ namespace Mood_Analyser
             {
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood Should not be null");
             }
-        }
-        
-
-
-
-
-        
-        
+        }        
     }
 }
