@@ -137,11 +137,22 @@ namespace MoodAnalyserTest
         }
         //TectCase-7.1
         [Test]
-        public void GivenHappyMoodDynamivRefactorReturnHappy()
+        public void GivenHappyMoodDynamicRefactorReturnHappy()
         {
             string result = Mood_Analyser.MoodAnalyserFactory.SetField("Happy","mood");           
             Assert.AreEqual("Happy", result);
         }
-        
+        public void GivenHappyMoodAndInvalidFielsThrowException()
+        {
+            try
+            {
+                string result = Mood_Analyser.MoodAnalyserFactory.SetField("Happy", "testMood");
+                Assert.AreEqual("Happy", result);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Field Not Found", e.Message);
+            }
+        }
     }
 }
